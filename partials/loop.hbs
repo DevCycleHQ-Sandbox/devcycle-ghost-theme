@@ -1,0 +1,39 @@
+<article class="feed {{visibility}} {{post_class}}">
+
+    <div class="feed-calendar">
+        <div class="feed-calendar-month">
+            {{date published_at format="MMM"}}
+        </div>
+        <div class="feed-calendar-day">
+            {{date published_at format="DD"}}
+        </div>
+    </div>
+
+    <h2 class="feed-title">{{title}}</h2>
+
+    <div class="feed-right">
+        {{> "icons/star"}}
+      
+       {{#if canonical_url}}
+     <div class="feed-length">
+            Outside Voices
+        </div>
+    {{else}}
+     <div class="feed-length">
+            {{reading_time}}
+        </div>
+    {{/if}}
+
+
+       
+    </div>
+
+    {{> "icons/chevron-right"}}
+
+    {{#if canonical_url}}
+    <a class="u-permalink" href="{{canonical_url}}" aria-label="{{title}}"></a>
+    {{else}}
+    <a class="u-permalink" href="{{url}}" aria-label="{{title}}"></a>
+    {{/if}}
+
+</article>
